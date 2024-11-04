@@ -32,7 +32,7 @@ const FoodTruckList = () => {
   }
 
   return (
-    <div>
+    <div className={"bg-black"}>
       <h2>Liste des Food Trucks</h2>      
       <div className="foodTruckGrid">
       {foodTrucks.map((truck) => (

@@ -12,7 +12,7 @@ const HomePage = () => {
                 padding: '0 0 0 20px'
             }}
             >Bienvenue chez Foodtroeuf</h1>
-        <section className="menu-section">
+        <section className={"menu-section"}>
             <FoodTruckList />
             {/* <MenuList items={items} /> */}
         </section>
