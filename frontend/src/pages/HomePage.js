@@ -21,7 +21,7 @@ const HomePage = () => {
             }}
             >Bienvenue chez Foodtroeuf</h1>
         <section className="menu-section">
-            <h2>Notre Menu</h2>
+            <h2 className={""}>Notre Menu</h2>
             <MenuList items={items} />
         </section>
     </div>
