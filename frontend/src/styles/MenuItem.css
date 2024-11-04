@@ -1,0 +1,29 @@
+/* MenuItem.css */
+.menu-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.menu-item h3 {
+  margin: 0;
+  color: #333;
+}
+
+.menu-item p {
+  color: #666;
+}
+
+.menu-item button {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.menu-item button:hover {
+  background-color: #e68900;
+}

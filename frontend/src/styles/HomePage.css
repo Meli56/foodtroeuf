@@ -1,0 +1,21 @@
+/* HomePage.css */
+.home-page {
+    font-family: Arial, sans-serif;
+  }
+  
+  .banner {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .menu-section {
+    padding: 20px;    
+  }
+  
+  .menu-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,21 @@
+/* src/pages/MenuPage.css */
+.menu-page {
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .menu-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .menu-header p {
+    margin-top: 0;
+    font-size: 1.1em;
+  }
+  
