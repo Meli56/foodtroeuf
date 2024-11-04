@@ -19,7 +19,9 @@ class FoodTruck(Base):
     name = Column(String, index=True)
     description = Column(Text)
     location = Column(String)
-    availability = Column(String)  # present or absent
+    day_of_week = Column(String, nullable=False)  # Lundi, Mardi, etc.
+    
+    menu_items = relationship("Menu", back_populates="food_truck", cascade="all, delete-orphan")
 
 class Menu(Base):
     __tablename__ = "menus"

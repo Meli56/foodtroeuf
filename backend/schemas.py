@@ -1,5 +1,5 @@
 # schemas.py
-from pydantic import BaseModel
+from pydantic import BaseModel, constr
 from typing import List, Optional
 
 class UserBase(BaseModel):
@@ -16,11 +16,13 @@ class User(UserBase):
     class Config:
         orm_mode = True
 
+valid_days = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"}
+
 class FoodTruckBase(BaseModel):
     name: str
     description: str
     location: str
-    availability: str
+    day_of_week: constr(regex="^Lundi$|^Mardi$|^Mercredi$|^Jeudi$|^Vendredi$")
 
 class FoodTruckCreate(FoodTruckBase):
     pass
