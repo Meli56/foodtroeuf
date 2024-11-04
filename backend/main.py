@@ -3,6 +3,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import crud, models, schemas
 from database import SessionLocal, engine
+from fastapi import FastAPI, Depends, HTTPException
+from sqlalchemy.orm import Session
+
+# Créer les tables
+models.Base.metadata.create_all(bind=engine)
 
 # Initialisation de l'application
 app = FastAPI()
