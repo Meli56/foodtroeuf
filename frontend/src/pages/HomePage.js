@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import MenuList from '../components/MenuList';
-import api from '../services/api';
+import FoodTruckList from '../components/FoodTruckList';
+
 import '../styles/HomePage.css';
 
 const HomePage = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    api.get('/food_trucks/')
-      .then(response => setItems(response.data))
-      .catch(error => console.error('Erreur lors du chargement du menu', error));
-  }, []);
-
   return (
     <div>
       <Navbar />
@@ -21,12 +13,10 @@ const HomePage = () => {
             }}
             >Bienvenue chez Foodtroeuf</h1>
         <section className="menu-section">
-            <h2>Notre Menu</h2>
-            <MenuList items={items} />
+            <FoodTruckList />
+            {/* <MenuList items={items} /> */}
         </section>
     </div>
-
-
   );
 };
 
