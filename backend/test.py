@@ -100,7 +100,7 @@ def test_create_food_truck():
             "name": "Taco Truck",
             "description": "Best tacos in town",
             "location": "Downtown",
-            "day_of_week": "Lundi"
+            "day_of_week": "lundi"
         },
     )
     assert response.status_code == 200
@@ -119,7 +119,7 @@ def test_update_food_truck():
             "name": "Burger Truck",
             "description": "Best burgers in town",
             "location": "Midtown",
-            "day_of_week": "Mardi"
+            "day_of_week": "mardi"
         },
     )
     food_truck_id = food_truck_response.json()["id"]
@@ -131,7 +131,7 @@ def test_update_food_truck():
             "name": "Updated Burger Truck",
             "description": "Updated description",
             "location": "Updated location",
-            "day_of_week": "Mercredi"
+            "day_of_week": "mercredi"
         },
     )
     assert response.status_code == 200
@@ -145,7 +145,7 @@ def test_delete_food_truck():
             "name": "Delete Truck",
             "description": "Temporary truck",
             "location": "Temporary location",
-            "day_of_week": "Jeudi"
+            "day_of_week": "jeudi"
         },
     )
     food_truck_id = food_truck_response.json()["id"]
@@ -165,7 +165,7 @@ def test_create_menu_item():
             "name": "Pizza Truck",
             "description": "Best pizzas in town",
             "location": "Westside",
-            "day_of_week": "Vendredi"
+            "day_of_week": "vendredi"
         },
     )
     food_truck_id = food_truck_response.json()["id"]
