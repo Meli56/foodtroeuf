@@ -16,7 +16,7 @@ class User(UserBase):
     class Config:
         orm_mode = True
 
-valid_days = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"}
+valid_days = {"lundi", "mardi", "mercredi", "jeudi", "vendredi"}
 
 class FoodTruckBase(BaseModel):
     name: str
