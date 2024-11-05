@@ -15,17 +15,17 @@ const HomePage = () => {
   
 
   return (
-    <div>
-      <div>
-        <div>
-          <div>
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <div>
+    <div className={"divXav"}>
+      <div className={"divXav"}>
+        <div className={"divXav"}>
+          <div className={"divXav"}>
+            <div className={"divXav"}>
+              <div className={"divXav"}>
+                <div className={"divXav"}>
+                  <div className={"divXav"}>
+                    <div className={"divXav"}>
+                      <div className={"divXav"}>
+                        <div className={"divXav"}>
                           <h3>Page de réservation : Burger Express</h3>
 
                           <form onSubmit={handleSubmit}>
