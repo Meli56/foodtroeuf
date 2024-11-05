@@ -36,15 +36,29 @@ const ResaPage = () => {
   if (!foodTrucks) {
     return <p>Aucun food truck disponible pour le moment.</p>;
   }
-  const currentDay = new Date().toLocaleString('fr-FR', { weekday: 'long' });
 
- 
+  const currentDay = new Date().toLocaleString('fr-FR', { weekday: 'long' });
+  let today = null;
+
+  foodTrucks.forEach((truck) => {
+    if(truck.day_of_week == currentDay){
+      today = truck;
+    }
+  })
+  const results = [];
+
+  {today.menu_items.forEach((menu) => {
+    results.push(
+      <option value={menu.item_name}>{menu.item_name}</option>
+    )
+  })}
+  
   return (
-    <div className={"bg-white h-screen w-screen"}>
-       <Navbar />
-      <div className={" justify-center p-8 mx-auto bg-white card bg-base-100 w-96 shadow-xl flex gap-2"}>
+    <div>
+      <Navbar />
+      <div className={" justify-center p-8 mx-auto bg-white card w-96 shadow-xl flex gap-2 my-8"}>
         <h1 className="text-2xl text-black ">Page de réservation :</h1>
-        <h1 className="text-xl text-black underline">{}</h1>
+        <h2 className="text-xl text-black font-extrabold">- {today.name} - </h2>
         <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
           <label htmlFor="address" className={"text-black text-xl"}>Adresse email SDV :</label>
           <label className="input input-bordered flex items-center gap-2 bg-gray-100">
@@ -72,30 +86,14 @@ const ResaPage = () => {
 
             <input type="time" className="grow text-black"  placeholder="Date" />
           </label>
-          <label htmlFor="address" className={"text-black text-xl"}>Choix du foodtruck :</label>
-
+          <label htmlFor="address" className={"text-black text-xl"}>Choix du menu :</label>
 
           {/*drop down menu */}
           <label className="input input-bordered flex bg-gray-100">
-
             <select className="grow w-full bg-gray-100 text-black">
-              <option>Choisir</option>
-              <option value="foodtruck 1">Foodtruck 1</option>
-              <option value="foodtruck 2">Foodtruck 2</option>
-              <option value="foodtruck 3">Foodtruck 3</option>
-              <option value="foodtruck 4">Foodtruck 4</option>
-              <option value="foodtruck 5">Foodtruck 5</option>
-              <option value="foodtruck 6">Foodtruck 6</option>
-              <option value="foodtruck 7">Foodtruck 7</option>
+              {results}
             </select>
-
-
           </label>
-
-
-
-
-
           <button className="btn btn-primary mt-4 text-white" type="submit">Réserver</button>
         </form>
       </div>

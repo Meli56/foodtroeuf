@@ -36,7 +36,6 @@ const FoodTruckList = () => {
       <h2 className={"text-white text-2xl font-semibold"}>Liste des Food Trucks</h2>      
       <div className="foodTruckGrid">
       {foodTrucks.map((truck) => (
-        
           <div key={truck.name} className={"foodTruckItem sm:max-w-[25%] md:max-w-[20%] lg:max-w-[16%] " + (truck.day_of_week == currentDay ? 'bg-black text-white' : 'bg-white text-black shadow-xl')}>
             <a href="/resa" className={" no-underline"}>
               <h3>{truck.name}</h3>
