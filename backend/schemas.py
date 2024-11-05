@@ -63,3 +63,5 @@ class Order(OrderBase):
 
     class Config:
         orm_mode = True
+
+FoodTruck.update_forward_refs()
