@@ -8,8 +8,8 @@ const Navbar = () => {
       <h1>Foodtroeuf</h1>
       <img id='ostrich' src="https://images.pexels.com/photos/752035/pexels-photo-752035.jpeg" alt="logo"></img>
       <ul className="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/menu">Menu</a></li>
+        <li><a href="/home">Accueil</a></li>
+        <li><a href="/resa">Reservation</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
