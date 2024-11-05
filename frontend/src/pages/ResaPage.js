@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Import des styles de react-toastify
 import Navbar from '../components/Navbar';
+import { fetchFoodTrucks } from '../services/foodTruckService';
 
-const HomePage = () => {
+const ResaPage = () => {
 
   const notify = () => toast("Wow so easy!");
 
@@ -12,19 +13,39 @@ const HomePage = () => {
     notify(); // Affiche la notification
   };
 
+  const [foodTrucks, setFoodTrucks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const getFoodTrucks = async () => {
+      try {
+        const data = await fetchFoodTrucks();
+        setFoodTrucks(data);
+      } catch (error) {
+        console.error("Erreur :", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getFoodTrucks();   
+  }, []);
 
+  if (loading) {
+    return <p>Chargement...</p>;
+  }
+  if (!foodTrucks) {
+    return <p>Aucun food truck disponible pour le moment.</p>;
+  }
+  const currentDay = new Date().toLocaleString('fr-FR', { weekday: 'long' });
+
+ 
   return (
-
     <div className={"bg-white h-screen w-screen"}>
        <Navbar />
       <div className={" justify-center p-8 mx-auto bg-white card bg-base-100 w-96 shadow-xl flex gap-2"}>
         <h1 className="text-2xl text-black ">Page de réservation :</h1>
-        <h1 className="text-xl text-black underline">Burger Express</h1>
+        <h1 className="text-xl text-black underline">{}</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
-
-
-
           <label htmlFor="address" className={"text-black text-xl"}>Adresse email SDV :</label>
           <label className="input input-bordered flex items-center gap-2 bg-gray-100">
             <svg
@@ -37,19 +58,19 @@ const HomePage = () => {
               <path
                 d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
-            <input type="text" className="grow" placeholder="Email" id='email' />
+            <input type="text" className="grow text-black" placeholder="Email" id='email' />
           </label>
           <label htmlFor="address" className={"text-black text-xl"}>Date de réservation :</label>
 
           <label className="input input-bordered flex items-center gap-2 bg-gray-100">
 
-            <input type="date" className="grow" placeholder="Date" />
+            <input type="date" className="grow text-black"  placeholder="Date" />
           </label>
           <label htmlFor="address" className={"text-black text-xl"}>Heure de réservation :</label>
 
           <label className="input input-bordered flex items-center gap-2 bg-gray-100">
 
-            <input type="time" className="grow" placeholder="Date" />
+            <input type="time" className="grow text-black"  placeholder="Date" />
           </label>
           <label htmlFor="address" className={"text-black text-xl"}>Choix du foodtruck :</label>
 
@@ -57,7 +78,8 @@ const HomePage = () => {
           {/*drop down menu */}
           <label className="input input-bordered flex bg-gray-100">
 
-            <select className="grow w-full bg-gray-100">
+            <select className="grow w-full bg-gray-100 text-black">
+              <option>Choisir</option>
               <option value="foodtruck 1">Foodtruck 1</option>
               <option value="foodtruck 2">Foodtruck 2</option>
               <option value="foodtruck 3">Foodtruck 3</option>
@@ -74,7 +96,7 @@ const HomePage = () => {
 
 
 
-          <button className="btn btn-primary mt-4" type="submit">Réserver</button>
+          <button className="btn btn-primary mt-4 text-white" type="submit">Réserver</button>
         </form>
       </div>
     </div>
@@ -82,4 +104,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ResaPage;

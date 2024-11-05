@@ -8,13 +8,10 @@
   }
   
   .foodTruckItem {
-    background-color: #fff;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     height: fit-content;
-    max-width: 13%;
   }
 
   .foodTruckMenu{

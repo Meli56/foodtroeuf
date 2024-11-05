@@ -8,10 +8,7 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <h1 style={{
-                padding: '0 0 0 20px'
-            }}
-            >Bienvenue chez Foodtroeuf</h1>
+      <h1 className={"p-4 text-white text-2xl font-semibold"}>Bienvenue chez Foodtroeuf</h1>
         <section className={"menu-section"}>
             <FoodTruckList />
             {/* <MenuList items={items} /> */}
