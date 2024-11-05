@@ -94,7 +94,7 @@ const ResaPage = () => {
               {results}
             </select>
           </label>
-          <button className="btn btn-primary mt-4 text-white" type="submit">Réserver</button>
+          <a href="/order" className="btn btn-primary mt-4 text-white" type="submit">Réserver</a>
         </form>
       </div>
     </div>
