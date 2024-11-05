@@ -82,7 +82,7 @@ const SignUpPage = () => {
                     </label>
                 </form>
                 <div className={"card-actions justify-end"}>
-                    <button className={"btn btn-secondary"} onClick={onSignInClick}>Déjà un compte</button>
+                    <button className={"btn btn-link"} onClick={onSignInClick}>Déjà un compte</button>
                     <button className={"btn btn-primary"} onClick={onSignUpClick}>S'inscrire</button>
                 </div>
             </div>
