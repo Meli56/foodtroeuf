@@ -8,26 +8,12 @@ const SignUpPage = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const validateInfo = (email, username, password, confirm) => {
-        if (!email.endsWith("@supdevinci-edu.fr") &&
-            (email.match(/@/g) || []).length) return false
-    }
-
     const onSignUpClick = () => {
+        if (validateInfo(email, username, password, confirmPassword))
         navigate('/home')
     }
 
     const onSignInClick = () => {
-        const index = email.lastIndexOf('@supdevinci-edu.fr')
-        const startEmail = email.substring(0, index)
-        if (startEmail.length === 0 || startEmail.includes('@'))
-            return false
-
-        // On vérifie qu'il y a de mots (Prénom + Nom)
-        if (!username.trim().includes(' '))
-            return false
-
-
         navigate('/')
     }
 
@@ -102,6 +88,20 @@ const SignUpPage = () => {
             </div>
         </div>
     )
+}
+
+export const validateInfo = (email, username, password, confirmPassword) => {
+    const index = email.lastIndexOf('@supdevinci-edu.fr')
+    const startEmail = email.substring(0, index)
+    if (startEmail.length === 0 || startEmail.includes('@'))
+        return false
+
+    // On vérifie qu'il y a de mots (Prénom + Nom)
+    if (!username.trim().includes(' '))
+        return false
+
+    if (password.length === 0) return false
+    return password === confirmPassword
 }
 
 export default SignUpPage;
