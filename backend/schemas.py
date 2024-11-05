@@ -22,7 +22,7 @@ class FoodTruckBase(BaseModel):
     name: str
     description: str
     location: str
-    day_of_week: constr(regex="^Lundi$|^Mardi$|^Mercredi$|^Jeudi$|^Vendredi$")
+    day_of_week: constr(regex="^lundi$|^mardi$|^mercredi$|^jeudi$|^vendredi$")
 
 class FoodTruckCreate(FoodTruckBase):
     pass
