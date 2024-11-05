@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 const SignInPage = () => {
@@ -6,8 +6,12 @@ const SignInPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const onLoginClick = () => {
-        // You'll update this function later
+    const onSignInClick = () => {
+        navigate('/home')
+    }
+
+    const onSignUpClick = () => {
+        navigate('/signup')
     }
 
     return (
@@ -27,8 +31,8 @@ const SignInPage = () => {
                             <path
                                 d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"/>
                         </svg>
-                        <input type="text" className="grow"
-                               placeholder="Email" value={email} onChange={setEmail}/>
+                        <input type="text" className="grow" placeholder="Email" value={email}
+                               onChange={ e => setEmail(e.target.value) }/>
                     </label>
                     <label
                         className="input input-bordered flex items-center gap-2">
@@ -42,11 +46,13 @@ const SignInPage = () => {
                                 d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                 clipRule="evenodd"/>
                         </svg>
-                        <input type="password" className="grow" placeholder="Mot de passe" value={password} onChange={setPassword}/>
+                        <input type="password" className="grow" placeholder="Mot de passe" value={password}
+                               onChange={ e => setPassword(e.target.value) }/>
                     </label>
                 </form>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Se connecter</button>
+                    <button className="btn btn-secondary" onClick={ onSignUpClick }>Créer un compte</button>
+                    <button className="btn btn-primary" onClick={ onSignInClick }>Se connecter</button>
                 </div>
             </div>
         </div>
