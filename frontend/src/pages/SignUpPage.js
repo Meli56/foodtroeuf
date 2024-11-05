@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 const SignUpPage = () => {
@@ -8,8 +8,15 @@ const SignUpPage = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
+    const validateInfo = (email, username, password, confirm) => {}
+
     const onSignUpClick = () => {
-        // You'll update this function later
+        if (!email.endsWith("@supdevinci-edu.fr")) return
+        navigate('/home')
+    }
+
+    const onSignInClick = () => {
+        navigate('/')
     }
 
     return (
@@ -29,7 +36,8 @@ const SignUpPage = () => {
                             <path
                                 d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"/>
                         </svg>
-                        <input type="text" className={"grow"} placeholder="Email" value={email} onChange={setEmail}/>
+                        <input type="text" className={"grow"} placeholder="Email" value={email}
+                               onChange={ e => setEmail(e.currentTarget.value) } />
                     </label>
                     <label
                         className={"input input-bordered flex items-center gap-2"}>
@@ -41,7 +49,8 @@ const SignUpPage = () => {
                             <path
                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z"/>
                         </svg>
-                        <input type="text" className={"grow"} placeholder="Prénom NOM" value={username} onChange={setUsername}/ />
+                        <input type="text" className={"grow"} placeholder="Prénom NOM" value={username}
+                               onChange={ e => setUsername(e.currentTarget.value) } />
                     </label>
                     <label
                         className={"input input-bordered flex items-center gap-2"}>
@@ -55,7 +64,8 @@ const SignUpPage = () => {
                                 d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                 clipRule="evenodd"/>
                         </svg>
-                        <input type="password" className={"grow"} placeholder="Mot de passe" value={password} onChange={setPassword} />
+                        <input type="password" className={"grow"} placeholder="Mot de passe" value={password}
+                               onChange={ e => setPassword(e.target.value) } />
                     </label>
                     <label
                         className={"input input-bordered flex items-center gap-2"}>
@@ -69,11 +79,13 @@ const SignUpPage = () => {
                                 d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                 clipRule="evenodd"/>
                         </svg>
-                        <input type="password" className={"grow"} placeholder="Confirmer le mot de passe" value={confirmPassword} onChange={setConfirmPassword} />
+                        <input type="password" className={"grow"} placeholder="Confirmer le mot de passe" value={confirmPassword}
+                               onChange={ e => setConfirmPassword(e.target.value) } />
                     </label>
                 </form>
                 <div className={"card-actions justify-end"}>
-                    <button className={"btn btn-primary"}>Se connecter</button>
+                    <button className={"btn btn-secondary"} onClick={onSignInClick}>Déjà un compte</button>
+                    <button className={"btn btn-primary"} onClick={onSignUpClick}>S'inscrire</button>
                 </div>
             </div>
         </div>
