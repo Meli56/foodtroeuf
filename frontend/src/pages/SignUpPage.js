@@ -8,14 +8,26 @@ const SignUpPage = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const validateInfo = (email, username, password, confirm) => {}
+    const validateInfo = (email, username, password, confirm) => {
+        if (!email.endsWith("@supdevinci-edu.fr") &&
+            (email.match(/@/g) || []).length) return false
+    }
 
     const onSignUpClick = () => {
-        if (!email.endsWith("@supdevinci-edu.fr")) return
         navigate('/home')
     }
 
     const onSignInClick = () => {
+        const index = email.lastIndexOf('@supdevinci-edu.fr')
+        const startEmail = email.substring(0, index)
+        if (startEmail.length === 0 || startEmail.includes('@'))
+            return false
+
+        // On vérifie qu'il y a de mots (Prénom + Nom)
+        if (!username.trim().includes(' '))
+            return false
+
+
         navigate('/')
     }
 

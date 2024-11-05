@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1437d063-745a-4667-a270-3f346f9a1df3" name="Changes" comment="" />
+    <list default="true" id="1437d063-745a-4667-a270-3f346f9a1df3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ResaPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ResaPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SignUpPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/ResaPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/ResaPage.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +39,7 @@
     "Node.js.App.js.executor": "Run",
     "Node.js.AuthPage.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "feature/auth-la-vraie",
     "last_opened_file_path": "C:/Users/johan/Documents/0 - Projects/Web/foodtroeuf/frontend/src/pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
